@@ -11,9 +11,9 @@ const Auth = () => {
     const next = location.search.split('next=')[1];
     const navigate = useNavigate();
     useEffect(() => {
-        if (auth.isAuthenticated)
-            navigate(next);
-    }, [auth.isAuthenticated, next]);
+        if (auth.isAuthenticated || auth.isGuest)
+            navigate(next || "/");
+    }, [auth.isAuthenticated, auth.isGuest, next]);
     return (<main className="bg-[url('/images/bg-auth.svg')] bg-cover min-h-screen flex items-center justify-center">
             <div className="gradient-border shadow-lg">
                 <section className="flex flex-col gap-8 bg-white rounded-2xl p-10">
@@ -31,6 +31,18 @@ const Auth = () => {
                                         <p>Log In</p>
                                     </button>)}
                             </>)}
+                    </div>
+                    <div>
+                        <div className="flex w-full justify-center items-center gap-3 px-6 ">
+                        <div className="border-b-2 border-dashed w-full h-0.5 border-dark-200"></div>
+                        <h3>or</h3>
+                        <div className="border-b-2 border-dashed w-full h-0.5 border-dark-200"></div>
+                    </div>
+                     <div className="flex justify-center items-center">
+                        <p onClick={() => {auth.guestLogin();
+                            navigate(next || "/");
+                        }} className="text-xl text-dark-200 py-3 cursor-pointer">Continue as guest</p>
+                     </div>
                     </div>
                 </section>
             </div>

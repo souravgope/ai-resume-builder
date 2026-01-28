@@ -15,9 +15,9 @@ export default function Home() {
     const [resumes, setResumes] = useState([]);
     const [loadingResumes, setLoadingResumes] = useState(false);
     useEffect(() => {
-        if (!auth.isAuthenticated)
+        if (!auth.isAuthenticated && !auth.isGuest)
             navigate('/auth?next=/');
-    }, [auth.isAuthenticated]);
+    }, [auth.isAuthenticated, auth.isGuest]);
     useEffect(() => {
         const loadResumes = async () => {
             setLoadingResumes(true);

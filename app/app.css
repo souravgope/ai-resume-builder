@@ -34,6 +34,10 @@ h2 {
   @apply text-3xl text-dark-200;
 }
 
+h3 {
+  @apply text-2xl text-dark-200;
+}
+
 label {
   @apply text-dark-200;
 }
@@ -57,7 +61,10 @@ form {
     @apply bg-gradient-to-b from-light-blue-100 to-light-blue-200 p-4 rounded-2xl;
   }
   .primary-button {
-    @apply primary-gradient text-white rounded-full px-4 py-2 cursor-pointer w-full;
+    @apply primary-gradient text-white rounded-full px-4 py-2 cursor-pointer;
+  }
+  .logout-button {
+    @apply logout-gradient text-white rounded-full px-4 py-2 cursor-pointer;
   }
   .resume-nav {
     @apply flex flex-row justify-between items-center p-4 border-b border-gray-200;
@@ -97,7 +104,7 @@ form {
   }
 
   .navbar {
-    @apply flex flex-row justify-between items-center bg-white rounded-full p-4 w-full px-10 max-w-[1200px] mx-auto;
+    @apply flex flex-row justify-between items-center bg-white rounded-full p-4 w-full px-5 max-w-[1200px] mx-auto;
   }
 
   .score-badge {
@@ -130,6 +137,11 @@ form {
 
 @utility primary-gradient {
   background: linear-gradient(to bottom, #8e98ff, #606beb);
+  box-shadow: 0px 74px 21px 0px #6678ef00;
+}
+
+@utility logout-gradient {
+  background: linear-gradient(to bottom, #ff9aa2, #ff6f91);
   box-shadow: 0px 74px 21px 0px #6678ef00;
 }
 

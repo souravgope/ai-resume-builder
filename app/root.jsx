@@ -21,6 +21,7 @@ export function Layout({ children }) {
     }, [init]);
     return (<html lang="en">
       <head>
+          <meta name="google-site-verification" content="EdXiD6O9Bk01ttSez-DMHDUv52SHJ6TNdbHjDM6QPnM" />
         <meta charSet="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <Meta />
